@@ -1,10 +1,23 @@
+<h1>My Profile</h1>
+
+Name: <%= @owner.name %>
+<br>
+Email: <%= @owner.email %>
+<br>
+Bio: <%= @owner.bio %>
+<br>
+<%= link_to "Edit", edit_owner_path(params[:id]) %>
+
 <h1>My Pet Profile</h1>
 
 <% @pets.each do |pet| %>
 <%= pet.name %>
 <br>
-<p>Pet Bio </p>
 <%= pet.bio %>
+<br>
+<%= link_to "Edit", edit_owner_pet_path(params[:id], pet.id) %>
+<%= link_to "Remove", owner_pet_path(pet.owner_id, pet.id), method: :delete %>
+<br>
 <% end %>
 <br>
 <%= link_to "Add a Pet", new_owner_pet_path(params[:id]) %>
