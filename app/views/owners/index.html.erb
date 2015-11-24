@@ -1,0 +1,9 @@
+<h1>Pet Owners</h1>
+
+<ul>
+<% @owners.each do |owner| %>
+  <li><%= link_to "Owner", "/owners/#{owner.id}", method: :get %>
+<% end %>
+</ul>
+
+<%= link_to "Add a new owner", new_owner_path %>

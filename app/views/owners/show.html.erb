@@ -1,0 +1,10 @@
+<h1>My Pet Profile</h1>
+
+<% @pets.each do |pet| %>
+<%= pet.name %>
+<br>
+<p>Pet Bio </p>
+<%= pet.bio %>
+<% end %>
+<br>
+<%= link_to "Add a Pet", new_owner_pet_path(params[:id]) %>
