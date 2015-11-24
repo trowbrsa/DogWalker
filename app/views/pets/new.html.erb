@@ -9,5 +9,6 @@
   <%= f.label :walk_frequency %>
   <%= f.text_field :walk_frequency %>
   <br>
+  <%= f.hidden_field :owner_id, value: params[:owner_id] %>
   <%= f.submit "Submit", :class => 'submit_button' %>
 <% end %>
