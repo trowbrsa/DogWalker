@@ -1,5 +1,9 @@
-<h1>Welcome, <%= @owner.name%>!</h1>
+<h1>Welcome, <%= @owner.name %>!</h1>
 <nav>
-<%= link_to "My profile", owner_path(@owner.id) %> <%= link_to "Logout", 'logout' %>
+<%= link_to "My profile", owner_path(@owner.id) %> <%= link_to "Logout", logout_path %>
 </nav>
-</div>
+<% if @owner.bio.nil? %>
+<p>Thanks for signing up! Please complete your profile by clicking <%= link_to "here", owner_path(@owner.id) %>.
+  There, you can add a brief bio about yourself and add information about your dogs!
+</p>
+<% end %>
