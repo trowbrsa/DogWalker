@@ -1,5 +1,18 @@
-<h1>My Profile</h1>
+<nav><% if current_user %>
+  <ul>
+    <%= link_to "Return to Welcome Page", owners_path %>
+    <%= link_to "Log out", logout_path, method: "delete" %>
+  </ul>
+<% else %>
+  <ul>
+    <li><%= link_to "Login", 'login' %></a></li>
+    <li><%= link_to "Signup", 'signup' %></a></li>
+  </ul>
+<% end %>
+</nav>
 
+<h1>My Profile</h1>
+<br>
 Name: <%= @owner.name %>
 <br>
 Email: <%= @owner.email %>
@@ -7,9 +20,9 @@ Email: <%= @owner.email %>
 Bio: <%= @owner.bio %>
 <br>
 <%= link_to "Edit", edit_owner_path(params[:id]) %>
-
+<br>
 <h1>My Pet Profile</h1>
-
+<br>
 <% @pets.each do |pet| %>
 <%= pet.name %>
 <br>

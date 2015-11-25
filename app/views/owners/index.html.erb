@@ -1,9 +1,5 @@
-<h1>Pet Owners</h1>
-
-<ul>
-<% @owners.each do |owner| %>
-  <li><%= link_to "Owner", "/owners/#{owner.id}", method: :get %>
-<% end %>
-</ul>
-
-<%= link_to "Add a new owner", new_owner_path %>
+<h1>Welcome, <%= @owner.name%>!</h1>
+<nav>
+<%= link_to "My profile", owner_path(@owner.id) %> <%= link_to "Logout", 'logout' %>
+</nav>
+</div>

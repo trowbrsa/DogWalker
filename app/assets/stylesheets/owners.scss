@@ -1,3 +1,13 @@
-// Place all the styles related to the owners controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-image: image-url("dog1.jpg");
+  background-size: cover;
+  font-family:'Quattrocento Sans', sans-serif;
+}
+
+h1 {
+  display: inline-block;
+}
+nav {
+  display: inline-block;
+  float: right;
+}

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+
+  root 'owners#home'
+
+  get 'signup' => 'owners#new'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  get '/owners/:id/home' => 'owners#welcome'
   resources :owners do
     resources :pets do
     end
