@@ -7,3 +7,14 @@
   There, you can add a brief bio about yourself and add information about your dogs!
 </p>
 <% end %>
+<br>
+<% if !@pets.nil? %>
+  <p>These are the dogs that need a walking</p>
+  <% @pets.each do |pet| %>
+    <%= pet.name %>
+    <br>
+    <% if !pet.image.nil? %>
+      <%= image_tag pet.image.url(:medium) %>
+    <% end %>
+  <% end %>
+<% end %>

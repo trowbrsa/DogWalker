@@ -8,6 +8,7 @@ class OwnersController < ApplicationController
 
   def index
     @owner = Owner.find(session[:owner_id]) if session[:owner_id]
+    @pets = @owner.pets
   end
 
   def new
@@ -39,12 +40,7 @@ class OwnersController < ApplicationController
   end
 
   def update
-    id = params[:id]
-    @owner = Owner.find(id)
-    @owner.update(
-    name: owner_params[:owner][:name],
-    email: owner_params[:owner][:email],
-    bio: owner_params[:owner][:bio])
+    Owner.update(params[:id], owner_params[:owner])
     redirect_to owner_path(params[:id])
   end
 
@@ -56,8 +52,7 @@ class OwnersController < ApplicationController
   private
 
   def owner_params
-    params[:owner]
-    params.require(:owner).permit(:name, :email, :bio, :password)
+    params.permit(owner:[:name, :email, :bio, :password])
   end
 
 end

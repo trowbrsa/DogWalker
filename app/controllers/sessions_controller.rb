@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
 
   end
 
+
   def create
     @owner = Owner.find_by_email(params[:session][:email])
       if @owner && @owner.authenticate(params[:session][:password])

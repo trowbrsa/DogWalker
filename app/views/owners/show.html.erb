@@ -26,6 +26,8 @@ Bio: <%= @owner.bio %>
 <% @pets.each do |pet| %>
 <%= pet.name %>
 <br>
+<%= image_tag pet.image.url(:medium) %>
+<br>
 <%= pet.bio %>
 <br>
 <%= link_to "Edit", edit_owner_pet_path(params[:id], pet.id) %>

@@ -19,11 +19,16 @@ class PetsController < ApplicationController
   def update
     #need owner id and pet id.
     id = params[:id]
-    pet = Pet.find(id)
-    owner_id = pet.owner_id
-    Pet.update(params[:id], pet_params[:pet])
+    @pet = Pet.find(id)
+    @pet.update(
+    name: pet_params[:pet][:name],
+    bio: pet_params[:pet][:bio],
+    walk_frequency: pet_params[:pet][:walk_frequency],
+    image: pet_params[:pet][:image]
+    )
     redirect_to owner_path(owner_id)
   end
+
 
   def destroy
     id = params[:id]
@@ -36,7 +41,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.permit(pet:[:name, :bio, :walk_frequency, :owner_id])
+    params.permit(pet:[:name, :bio, :walk_frequency, :owner_id, :image])
   end
 
 end

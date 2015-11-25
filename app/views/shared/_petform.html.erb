@@ -1,14 +1,13 @@
-<%= form_for @pet, url:{ action: @action } do |f| %>
+<%= form_for @pet, url:{ action: @action }, html: {multipart: true } do |f| %>
   <legend><h1>Pet Profile</h1></legend>
   <%= f.label :name %>
-  <%= f.text_field :name %>
-  <br>
+  <%= f.text_field :name %><br>
   <%= f.label :bio %>
-  <%= f.text_field :bio %>
-  <br>
+  <%= f.text_field :bio %><br>
   <%= f.label :walk_frequency %>
-  <%= f.text_field :walk_frequency %>
-  <br>
-  <%= f.hidden_field :owner_id, value: params[:owner_id] %>
+  <%= f.text_field :walk_frequency %><br>
+  <%= f.label :image %><br>
+  <%= f.file_field :image %><br>
+  <%= f.hidden_field :owner_id, value: params[:owner_id] %><br>
   <%= f.submit "Submit", :class => 'submit_button' %>
 <% end %>
