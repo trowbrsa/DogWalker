@@ -33,6 +33,12 @@ class OwnersController < ApplicationController
   end
 
   def show
+    id = params[:id]
+    @market = Market.find(id)
+    @vendors = @market.vendors
+  end
+
+  def show
     # ID for the owner
     id = params[:id]
     @owner = Owner.find(id)

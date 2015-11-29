@@ -1,6 +1,6 @@
 <h1>Welcome!</h1>
 <nav>
-<%= link_to "My profile", user_owner_path(@owner.id) %> <%= link_to "Logout", logout_path %>
+<%= link_to "My profile", user_owner_path(:user_id, @owner.id) %> <%= link_to "Logout", logout_path %>
 </nav>
 <% if @owner.bio.nil? %>
 <p>Thanks for signing up! Please complete your profile by clicking <%= link_to "here", owner_path(@owner.id) %>.
