@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @current_user ||=
-    Owner.find(session[:owner_id]) if session[:owner_id]
+    User.find(session[:user_id]) if session[:owner_id]
   end
 
   def require_user

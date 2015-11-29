@@ -7,7 +7,8 @@ class OwnersController < ApplicationController
   end
 
   def index
-    @owner = Owner.find(session[:owner_id]) if session[:owner_id]
+    @user = User.find(session[:user_id]) if session[:user_id]
+    @owner = Owner.find(params[:id])
     @pets = @owner.pets
   end
 
@@ -32,11 +33,6 @@ class OwnersController < ApplicationController
     @action = :update
   end
 
-  def show
-    id = params[:id]
-    @market = Market.find(id)
-    @vendors = @market.vendors
-  end
 
   def show
     # ID for the owner
