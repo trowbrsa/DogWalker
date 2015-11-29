@@ -2,13 +2,15 @@ Rails.application.routes.draw do
 
   root 'owners#home'
 
-  get 'signup' => 'owners#new'
+  get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
   get 'logout' => 'sessions#destroy'
-  get '/owners/:id/home' => 'owners#welcome'
-  resources :owners do
-    resources :pets do
+  # get '/owners/:id/home' => 'owners#welcome'
+  resources :users do
+    resources :owners do
+      resources :pets do
+      end
     end
   end
 

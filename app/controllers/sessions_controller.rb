@@ -6,17 +6,17 @@ class SessionsController < ApplicationController
 
 
   def create
-    @owner = Owner.find_by_email(params[:session][:email])
-      if @owner && @owner.authenticate(params[:session][:password])
-        session[:owner_id] = @owner.id
-        redirect_to owners_path
+    @user = User.find_by_email(params[:session][:email])
+      if @user && @user.authenticate(params[:session][:password])
+        session[:user_id] = @user.id
+        redirect_to users_path
       else
         redirect_to 'login'
       end
   end
 
   def destroy
-    session[:owner_id] = nil
+    session[:user_id] = nil
     redirect_to "/"
   end
 
