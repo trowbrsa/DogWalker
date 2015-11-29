@@ -1,6 +1,5 @@
 class OwnersController < ApplicationController
 
-  before_action :require_user, only:[:index, :show]
 
   def home
 
@@ -18,21 +17,16 @@ class OwnersController < ApplicationController
   end
 
   def create
-    @owner = Owner.new(owner_params)
-    if @owner.save
-      session[:owner_id] = @owner.id
-      redirect_to '/owners'
-    else
-      redirect_to 'signup'
-    end
+    owner = Owner.create(owner_params[:bio])
+    redirect_to user_owner_path(params[:user_id], owner.id)
   end
+
 
   def edit
     id = params[:id]
     @owner = Owner.find(id)
     @action = :update
   end
-
 
   def show
     # ID for the owner
@@ -54,7 +48,7 @@ class OwnersController < ApplicationController
   private
 
   def owner_params
-    params.permit(owner:[:name, :email, :bio, :password])
+    params.permit(owner:[:id, :user_id, :bio])
   end
 
 end
