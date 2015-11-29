@@ -17,7 +17,7 @@ class OwnersController < ApplicationController
   end
 
   def create
-    owner = Owner.create(owner_params[:bio])
+    owner = Owner.create(owner_params[:owner])
     redirect_to user_owner_path(params[:user_id], owner.id)
   end
 
@@ -48,7 +48,7 @@ class OwnersController < ApplicationController
   private
 
   def owner_params
-    params.permit(owner:[:id, :user_id, :bio])
+    params.permit(owner:[:id, :first_name, :last_name, :user_id, :bio])
   end
 
 end

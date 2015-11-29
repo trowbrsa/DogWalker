@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151129192950) do
+ActiveRecord::Schema.define(version: 20151129230650) do
 
   create_table "owners", force: :cascade do |t|
     t.string   "bio"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20151129192950) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   create_table "pets", force: :cascade do |t|
@@ -35,6 +37,7 @@ ActiveRecord::Schema.define(version: 20151129192950) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,8 +45,6 @@ ActiveRecord::Schema.define(version: 20151129192950) do
     t.string   "password_digest"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "first_name"
-    t.string   "last_name"
   end
 
   create_table "walkers", force: :cascade do |t|

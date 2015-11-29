@@ -1,6 +1,12 @@
 <fieldset>
   <%= form_for @owner, url:{ action: @action } do |f| %>
     <legend><h1>Complete the following information</h1></legend>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+    <br>
     <%= f.label :bio %>
     <%= f.text_field :bio %>
     <%= f.submit "Submit", :class => 'submit_button' %>

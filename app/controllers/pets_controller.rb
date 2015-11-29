@@ -6,9 +6,10 @@ class PetsController < ApplicationController
   end
 
   def create
-    @pet = Pet.create(pet_params[:pet] )
-    redirect_to owners_path(params[:owner_id])
+    @pet = Pet.create(pet_params[:pet])
+    redirect_to user_owner_path(params[:user_id], @pet.owner_id)
   end
+
 
   def edit
     id = params[:id]
@@ -26,7 +27,7 @@ class PetsController < ApplicationController
     walk_frequency: pet_params[:pet][:walk_frequency],
     image: pet_params[:pet][:image]
     )
-    redirect_to owner_path(owner_id)
+    redirect_to user_owner_path(:user_id, :id)
   end
 
 
@@ -41,7 +42,7 @@ class PetsController < ApplicationController
   private
 
   def pet_params
-    params.permit(pet:[:name, :bio, :walk_frequency, :owner_id, :image])
+    params.permit(pet:[:name, :bio, :walk_frequency, :owner_id, :image, :user_id])
   end
 
 end

@@ -1,1 +1,28 @@
-<h3>Show page</h3>
+<h3>Welcome, <%= @owner.first_name %>!</h3>
+
+<nav><% if current_user %>
+  <ul>
+    <% link_to "My profile", 
+    <%= link_to "Log out", logout_path, method: "delete" %>
+  </ul>
+<% else %>
+  <ul>
+    <li><%= link_to "Login", 'login' %></a></li>
+    <li><%= link_to "Signup", 'signup' %></a></li>
+  </ul>
+<% end %>
+</nav>
+
+
+<%= link_to "Add a Pet", new_user_owner_pet_path(params[:user_id], @owner.id) %>
+
+<% if !@pets.nil? %>
+<p>These are the dogs that need a walking</p>
+  <% @pets.each do |pet| %>
+    <%= pet.name %>
+    <br>
+    <% if !pet.image.nil? %>
+      <%= image_tag pet.image.url(:medium) %>
+    <% end %>
+  <% end %>
+<% end %>s
