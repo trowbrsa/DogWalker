@@ -11,6 +11,10 @@
 </nav>
 
 <h3>Welcome, <%= @owner.first_name %>!</h3>
+<p>In a future version of this, there will be a carousel will display the <br>
+  last 5 five dog walkers that have created an account with a picture. It <br>
+  will also have a link to the user's profile, where the user can edit their<br>
+  information. FANCY!</p> 
 
 <br>
 <%= link_to "Add a Pet", new_user_owner_pet_path(params[:user_id], @owner.id) %>
