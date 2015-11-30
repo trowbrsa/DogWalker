@@ -1,0 +1,16 @@
+<%= form_for @pet, url:{ action: @action }, html: {multipart: true } do |f| %>
+  <legend><h1>Pet Profile</h1></legend>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+  <p> Write a brief bio for your dog to give dog walkers a sense of your pup</p>
+  <%= f.label :bio %>
+  <%= f.text_area :bio %><br>
+  <p>Tell us the frequency with which you'd like a walker to walk your dog</p>
+  <%= f.label :walk_frequency %>
+  <%= f.text_field :walk_frequency %><br>
+  <p> Upload your pug's mug!</p>
+  <%= f.label :image %><br>
+  <%= f.file_field :image %><br>
+  <%= f.hidden_field :owner_id, value: params[:owner_id] %><br>
+  <%= f.submit "Submit", :class => 'submit_button' %>
+<% end %>

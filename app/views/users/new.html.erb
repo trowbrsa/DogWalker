@@ -1,0 +1,12 @@
+<fieldset>
+  <%= form_for @user, url:{ action: @action } do |f| %>
+    <legend><h1>Sign up here</h1></legend>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.submit "Submit", :class => 'submit_button' %>
+  <% end %>
+</fieldset>
