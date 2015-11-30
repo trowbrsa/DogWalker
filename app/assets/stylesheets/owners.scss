@@ -8,6 +8,22 @@ h1 {
   display: inline-block;
 }
 nav {
-  display: inline-block;
   float: right;
+  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.nav_link {
+  color: white;
+}
+
+.button {
+  display:inline-block;
+  padding: 40px;
+  border-radius: 10px;
+  border-width: medium;
+  margin: 10px;
+  margin-bottom: 20px;
+  text-align: center;
 }

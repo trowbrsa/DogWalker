@@ -1,2 +1,4 @@
-<%= link_to "I am an owner with a dog that needs more walks!", new_user_owner_path(@user.id) %>
-<%= link_to "I am a person that wants to walk dogs!", 'signup' %>
+<div class="center">
+<%= link_to "I am an owner with a dog that needs more walks!", new_user_owner_path(@user.id), class: "button" %>
+<%= link_to "I am a person that wants to walk dogs!", 'signup', class: "button" %>
+</div>
