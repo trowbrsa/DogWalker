@@ -15,6 +15,7 @@
 <br>
 <%= link_to "Add a Pet", new_user_owner_pet_path(params[:user_id], @owner.id) %>
 <br>
+<br>
   <% @pets.each do |pet| %>
     <%= pet.name %>
     <br>
@@ -23,7 +24,7 @@
       <br>
       <%= pet.bio %>
       <br>
-
+      <br>
       <%= link_to "Edit", edit_user_owner_pet_path(params[:user_id], @owner.id, pet.id) %>
       <%= link_to "Remove", user_owner_pet_path(params[:user_id], @owner.id, pet.id), method: :delete %>
       <br>
