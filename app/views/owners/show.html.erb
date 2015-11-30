@@ -2,8 +2,7 @@
 
 <nav><% if current_user %>
   <ul>
-    <% link_to "My profile", 
-    <%= link_to "Log out", logout_path, method: "delete" %>
+    <%= link_to "Log out", logout_path %>
   </ul>
 <% else %>
   <ul>
