@@ -7,11 +7,21 @@ body {
 h1 {
   display: inline-block;
 }
+
 nav {
   text-align: right;
   border-radius: 5px;
   padding: 1px;
 }
+
+a {text-decoration: none;
+}
+
+a:link {color: #303030}
+
+a:hover {text-weight: bold;
+}
+
 
 .nav_link {
   color: white;
@@ -25,4 +35,15 @@ nav {
   margin: 10px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.def_button {
+    display:inline-block;
+    padding: 40px;
+    border-radius: 10px;
+    border-width: medium;
+    margin: 50px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: white;
 }

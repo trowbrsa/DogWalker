@@ -1,20 +1,32 @@
-<h1>Welcome!</h1>
-<nav>
-<%= link_to "My profile", user_owner_path(:user_id, @owner.id) %> <%= link_to "Logout", logout_path %>
-</nav>
-<% if @owner.bio.nil? %>
-<p>Thanks for signing up! Please complete your profile by clicking <%= link_to "here", owner_path(@owner.id) %>.
-  There, you can add a brief bio about yourself and add information about your dogs!
-</p>
+<nav><% if current_user %>
+  <ul>
+    <%= link_to "Log out", logout_path %>
+  </ul>
+<% else %>
+  <ul>
+    <li><%= link_to "Login", 'login' %></a></li>
+    <li><%= link_to "Signup", 'signup' %></a></li>
+  </ul>
 <% end %>
+</nav>
+
+<h3>Welcome, <%= @owner.first_name %>!</h3>
+
 <br>
-<% if !@owner.pets.nil? %>
-  <p>These are the dogs that need a walking</p>
+<%= link_to "Add a Pet", new_user_owner_pet_path(params[:user_id], @owner.id) %>
+<br>
+<br>
   <% @pets.each do |pet| %>
     <%= pet.name %>
     <br>
     <% if !pet.image.nil? %>
       <%= image_tag pet.image.url(:medium) %>
+      <br>
+      <%= pet.bio %>
+      <br>
+      <br>
+      <%= link_to "Edit", edit_user_owner_pet_path(params[:user_id], @owner.id, pet.id) %>
+      <%= link_to "Remove", user_owner_pet_path(params[:user_id], @owner.id, pet.id), method: :delete %>
+      <br>
     <% end %>
   <% end %>
-<% end %>
