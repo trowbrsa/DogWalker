@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   get 'signup' => 'users#new'
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy'
-  # get '/owners/:id/home' => 'owners#welcome'
+  get 'logout' => 'sessions#destroy'
   resources :users do
     resources :owners do
       resources :pets do

@@ -10,8 +10,9 @@ class SessionsController < ApplicationController
       if @user && @user.authenticate(params[:session][:password])
         session[:user_id] = @user.id
         @owner = Owner.where(:user_id == @user.id)
-        redirect_to user_owner_path(:user_id, @user.id)
+        redirect_to user_owner_path(@user, @owner)
       else
+        flash[:alert] = "Your username/password combination was invalid."
         redirect_to 'login'
       end
   end

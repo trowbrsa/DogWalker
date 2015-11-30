@@ -36,7 +36,7 @@ class PetsController < ApplicationController
     pet = Pet.find(id)
     owner_id = pet.owner_id
     Pet.destroy(params[:id])
-    redirect_to owner_path(owner_id)
+    redirect_to user_owner_path(params[:user_id], owner_id)
   end
 
   private
