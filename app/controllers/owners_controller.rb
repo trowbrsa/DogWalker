@@ -29,9 +29,7 @@ class OwnersController < ApplicationController
   end
 
   def show
-    # ID for the owner
-    id = params[:id]
-    @owner = Owner.find(id)
+    @owner = Owner.find(params[:id])
     @pets = @owner.pets
   end
 

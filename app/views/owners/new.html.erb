@@ -9,5 +9,6 @@
     <br>
     <%= f.label :bio %>
     <%= f.text_field :bio %>
+    <%= f.hidden_field :user_id, value: params[:user_id] %>
     <%= f.submit "Submit", :class => 'submit_button' %>
   <% end %>

@@ -8,7 +8,7 @@
 </p>
 <% end %>
 <br>
-<% if !@pets.nil? %>
+<% if !@owner.pets.nil? %>
   <p>These are the dogs that need a walking</p>
   <% @pets.each do |pet| %>
     <%= pet.name %>

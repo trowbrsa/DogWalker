@@ -12,11 +12,11 @@
 <% end %>
 </nav>
 
-
 <%= link_to "Add a Pet", new_user_owner_pet_path(params[:user_id], @owner.id) %>
 
-<% if !@pets.nil? %>
-<p>These are the dogs that need a walking!</p>
+
+<% if !@owner.pets.nil? %>
+  <p>These are the dogs that need a walking!</p>
   <% @pets.each do |pet| %>
     <%= pet.name %>
     <br>
@@ -29,6 +29,5 @@
       <%= link_to "Remove", user_owner_pet_path(params[:user_id], @owner.id, pet.id), method: :delete %>
       <br>
     <% end %>
-<br>
   <% end %>
 <% end %>s
