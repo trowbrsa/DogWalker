@@ -7,7 +7,7 @@ class OwnersController < ApplicationController
 
   def index
     @user = User.find(session[:user_id]) if session[:user_id]
-    @owner = Owner.find(params[:id])
+    @owner = Owner.find(params[:owner_id])
     @pets = @owner.pets
   end
 
@@ -16,9 +16,14 @@ class OwnersController < ApplicationController
     @action = :create
   end
 
+  # def create
+  #   owner = Owner.create(owner_params[:owner])
+  #   redirect_to user_owner_path(params[:user_id], owner.id)
+  # end
+
   def create
-    owner = Owner.create(owner_params[:owner])
-    redirect_to user_owner_path(params[:user_id], owner.id)
+    Owner.create(owner_params[:owner])
+    redirect_to user_owners_path(params[:user_id])
   end
 
 
@@ -46,7 +51,7 @@ class OwnersController < ApplicationController
   private
 
   def owner_params
-    params.permit(owner:[:id, :first_name, :last_name, :user_id, :bio])
+    params.permit(owner:[:id, :first_name, :last_name, :user_id, :bio, :owner_id])
   end
 
 end

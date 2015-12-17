@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       resources :pets do
       end
     end
+    resources :walkers
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
