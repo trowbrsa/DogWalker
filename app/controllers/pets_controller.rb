@@ -17,20 +17,12 @@ class PetsController < ApplicationController
     @action = :update
   end
 
-  def update
-    id = params[:id]
-    product = Product.find(id)
-    vendor_id = product.vendor_id
-    Product.update(params[:id], product_params[:product])
-    redirect_to vendor_path(vendor_id)
-  end
 
   def update
     #need owner id and pet id.
     id = params[:id]
     pet = Pet.find(id)
     owner = pet.owner_id
-    user = pet.user_id
     pet.update(
     name: pet_params[:pet][:name],
     bio: pet_params[:pet][:bio],
