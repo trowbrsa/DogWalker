@@ -1,0 +1,17 @@
+<header>
+    <%= link_to root_url do %>
+    <div class="logo">
+      <h6>D</h6>
+    </div>
+    <% end %> 
+
+    <nav>
+      <% if current_user %>
+        <%= link_to "Account", user_path(current_user), class: 'nav_font' %>
+        <%= link_to "Log Out", logout_path, class: 'nav_font' %>
+      <% else %>
+        <%= link_to "Sign Up", signup_path, class: 'nav_font' %>
+        <%= link_to "Log In", login_path, class: 'nav_font' %>
+      <% end %>
+    </nav>
+  </header>
