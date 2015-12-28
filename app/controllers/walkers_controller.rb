@@ -10,6 +10,10 @@ class WalkersController < ApplicationController
     redirect_to user_walker_path(params[:user_id], walker.id)
   end
 
+  def show
+    @walker = Walker.find(params[:id])
+  end
+
   private
 
   def walker_params
