@@ -1,0 +1,16 @@
+<%= form_for @walker, url:{ action: @action } do |f| %>
+  <legend><h1>Please complete the following information to create your profile</h1></legend>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <br>
+  <%= f.label :last_name %>
+  <%= f.text_field :last_name %>
+  <br>
+  <p>Tell your future dog owner a bit about yourself:</p>
+  <%= f.label :bio %>
+  <%= f.text_area :bio %>
+  <br>
+  <%= f.hidden_field :user_id, value: params[:user_id] %>
+  <br>
+  <%= f.submit "Submit", :class => 'submit_button' %>
+<% end %>

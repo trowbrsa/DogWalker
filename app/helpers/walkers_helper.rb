@@ -1,0 +1,2 @@
+module WalkersHelper
+end
