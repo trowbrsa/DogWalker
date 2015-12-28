@@ -17,6 +17,19 @@ class SessionsController < ApplicationController
       end
   end
 
+  def create_walker
+    @user = User.find_by_email(params[:session][:email])
+      if @user && @user.authenticate(params[:session][:password])
+        session[:user_id] = @user.id
+        walker = Walker.where(:user_id == @user.id).first
+        redirect_to user_walker_path(@user, walker)
+      else
+        flash[:alert] = "Your username/password combination was invalid."
+        redirect_to 'login'
+      end
+
+  end
+
   def destroy
     session[:user_id] = nil
     redirect_to "/"

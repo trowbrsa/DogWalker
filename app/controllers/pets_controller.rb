@@ -24,10 +24,10 @@ class PetsController < ApplicationController
     pet = Pet.find(id)
     owner = pet.owner_id
     pet.update(
-    name: pet_params[:pet][:name],
-    bio: pet_params[:pet][:bio],
-    walk_frequency: pet_params[:pet][:walk_frequency],
-    image: pet_params[:pet][:image]
+      name: pet_params[:pet][:name],
+      bio: pet_params[:pet][:bio],
+      walk_frequency: pet_params[:pet][:walk_frequency],
+      image: pet_params[:pet][:image]
     )
     redirect_to user_owner_path(params[:user_id], owner)
   end
