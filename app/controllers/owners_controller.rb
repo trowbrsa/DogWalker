@@ -16,14 +16,9 @@ class OwnersController < ApplicationController
     @action = :create
   end
 
-  # def create
-  #   owner = Owner.create(owner_params[:owner])
-  #   redirect_to user_owner_path(params[:user_id], owner.id)
-  # end
-
   def create
-    Owner.create(owner_params[:owner])
-    redirect_to user_owners_path(params[:user_id])
+    owner = Owner.create(owner_params[:owner])
+    redirect_to user_owner_path(params[:user_id], owner.id)
   end
 
 
