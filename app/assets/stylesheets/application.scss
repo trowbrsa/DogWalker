@@ -10,9 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
 @import url('https://fonts.googleapis.com/css?family=Lato|News+Gothic|Inconsolata|Droid+Sans|Roboto|Cabin|Open+Sans');
 
@@ -51,4 +53,14 @@ nav {
   text-align: center;
   font-family: sans-serif;
   font-size: 53px;
+}
+
+.jumbotron-custom {
+  background: url('dog1.jpg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.title-fade {
+  background-color: rgba(192,192,192,0.3);
 }

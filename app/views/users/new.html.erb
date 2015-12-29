@@ -1,13 +1,22 @@
+<div class="col-sm-4"></div>
+<div class="col-sm-4">
 <fieldset>
   <%= form_for @user, url:{ action: @action } do |f| %>
-    <legend><h1>Sign up here</h1></legend>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
+    <h3>Sign up here!</h3>
     <br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <div class="form-group">
+      <%= f.label :email %>
+      <%= f.email_field :email, class:"form-control" %>
+    </div>
+    <br>
+    <div class="form-group">
+      <%= f.label :password %>
+      <%= f.password_field :password, class:"form-control" %>
+    </div>
     <br>
     <%= f.hidden_field :owner_id, value: 9 %>
     <%= f.submit "Submit", :class => 'submit_button' %>
   <% end %>
 </fieldset>
+</div>
+<div class="col-sm-4"></div>

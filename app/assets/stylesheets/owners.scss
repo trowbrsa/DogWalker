@@ -1,49 +1,53 @@
-body {
-  background-image: image-url("dog1.jpg");
-  background-size: cover;
-  font-family:'Quattrocento Sans', sans-serif;
-}
-
-h1 {
-  display: inline-block;
-}
-
-nav {
-  text-align: right;
-  border-radius: 5px;
-  padding: 1px;
-}
-
-a {text-decoration: none;
-}
-
+// body {
+//   background-image: image-url("dog1.jpg");
+//   background-size: cover;
+//   font-family:'Quattrocento Sans', sans-serif;
+// }
+//
+// h1 {
+//   display: inline-block;
+// }
+//
+// nav {
+//   text-align: right;
+//   border-radius: 5px;
+//   padding: 1px;
+// }
+//
+// a {text-decoration: none;
+// }
+//
 a:link {color: #505050}
 
 a:hover {text-weight: bold;
 }
 
-
-.nav_link {
-  color: white;
-}
-
-.button {
-  display:inline-block;
-  padding: 40px;
-  border-radius: 10px;
-  border-width: medium;
-  margin: 10px;
-  margin-bottom: 20px;
+.main-page-title {
   text-align: center;
 }
-
-.def_button {
-    display:inline-block;
-    padding: 40px;
-    border-radius: 10px;
-    border-width: medium;
-    margin: 50px;
-    margin-bottom: 20px;
-    text-align: center;
-    background-color: white;
-}
+//
+//
+// .nav_link {
+//   color: white;
+// }
+//
+// .button {
+//   display:inline-block;
+//   padding: 40px;
+//   border-radius: 10px;
+//   border-width: medium;
+//   margin: 10px;
+//   margin-bottom: 20px;
+//   text-align: center;
+// }
+//
+// .def_button {
+//     display:inline-block;
+//     padding: 40px;
+//     border-radius: 10px;
+//     border-width: medium;
+//     margin: 50px;
+//     margin-bottom: 20px;
+//     text-align: center;
+//     background-color: white;
+// }

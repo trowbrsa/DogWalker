@@ -1,16 +1,29 @@
+<div class="col-md-4"></div>
+<div class="col-md-4">
 <%= form_for @pet, url:{ action: @action }, html: {multipart: true } do |f| %>
-  <legend><h1>Pet Profile</h1></legend>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br>
+  <h1>Pet Profile</h1>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class:"form-control" %>
+  </div>
+<br>
   <p> Write a brief bio for your dog to give dog walkers a sense of your pup</p>
+  <div class="form-group">
   <%= f.label :bio %>
-  <%= f.text_area :bio %><br>
+  <%= f.text_area :bio, class:"form-control" %><br>
+  </div>
   <p>Tell us the frequency with which you'd like a walker to walk your dog</p>
+  <div class="form-group">
   <%= f.label :walk_frequency %>
-  <%= f.text_field :walk_frequency %><br>
+  <%= f.text_field :walk_frequency, class:"form-control" %><br>
+  </div>
   <p> Upload your pug's mug!</p>
+  <div class="form-group">
   <%= f.label :image %><br>
   <%= f.file_field :image %><br>
+  </div>
   <%= f.hidden_field :owner_id, value: params[:owner_id] %><br>
-  <%= f.submit "Submit", :class => 'submit_button' %>
+  <%= f.submit "Submit", :class => 'submit_button btn btn-default' %>
 <% end %>
+</div>
+<div class="col-md-4"></div>
