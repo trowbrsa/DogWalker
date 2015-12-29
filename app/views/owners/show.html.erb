@@ -1,15 +1,3 @@
-<nav><% if current_user %>
-  <ul>
-    <%= link_to "Log out", logout_path %>
-  </ul>
-<% else %>
-  <ul>
-    <li><%= link_to "Login", 'login' %></a></li>
-    <li><%= link_to "Signup", 'signup' %></a></li>
-  </ul>
-<% end %>
-</nav>
-
 <h3>Welcome, <%= @owner.first_name %>!</h3>
 <p>In a future version of this, there will be a carousel will display the <br>
   last 5 five dog walkers that have created an account with a picture. It <br>
