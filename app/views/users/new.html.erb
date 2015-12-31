@@ -7,6 +7,10 @@
     <%= f.label :password %>
     <%= f.password_field :password %>
     <br>
+    <br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <br>
     <%= f.hidden_field :owner_id, value: 9 %>
     <%= f.submit "Submit", :class => 'submit_button' %>
   <% end %>
