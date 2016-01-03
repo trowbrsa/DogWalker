@@ -20,7 +20,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
-      redirect_to 'signup'
+      render :new
     end
   end
 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password)
+    params.require(:user).permit(:email, :email_confirmation, :password, :password_confirmation)
   end
 
 end

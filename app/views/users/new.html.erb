@@ -1,11 +1,26 @@
+<ul>
+  <% @user.errors.each do |column, message| %>
+    <li>
+      <strong><%= column.capitalize %></strong> <%= message %>
+    </li>
+  <% end %>
+</ul>
+
 <fieldset>
   <%= form_for @user, url:{ action: @action } do |f| %>
     <legend><h1>Sign up here</h1></legend>
     <%= f.label :email %>
     <%= f.email_field :email %>
     <br>
+    <%= f.label :email_confirmation %>
+    <%= f.email_field :email_confirmation %>
+    <br>
     <%= f.label :password %>
     <%= f.password_field :password %>
+    <br>
+    <br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
     <br>
     <%= f.hidden_field :owner_id, value: 9 %>
     <%= f.submit "Submit", :class => 'submit_button' %>
