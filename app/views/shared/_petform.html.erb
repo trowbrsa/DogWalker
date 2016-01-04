@@ -1,7 +1,7 @@
 <div class="col-md-4"></div>
-<div class="col-md-4">
+<div class="col-md-4 title-fade">
 <%= form_for @pet, url:{ action: @action }, html: {multipart: true } do |f| %>
-  <h1>Pet Profile</h1>
+  <h3>Pet Profile</h3>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class:"form-control" %>
@@ -25,5 +25,6 @@
   <%= f.hidden_field :owner_id, value: params[:owner_id] %><br>
   <%= f.submit "Submit", :class => 'submit_button btn btn-default' %>
 <% end %>
+<br>
 </div>
 <div class="col-md-4"></div>

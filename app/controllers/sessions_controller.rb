@@ -1,7 +1,7 @@
 class SessionsController < ApplicationController
 
   def new
-
+    @bg = "bg-8"
   end
 
 

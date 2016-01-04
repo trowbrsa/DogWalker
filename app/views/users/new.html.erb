@@ -1,5 +1,5 @@
 <div class="col-sm-4"></div>
-<div class="col-sm-4">
+<div class="col-sm-4 title-fade">
 <fieldset>
   <%= form_for @user, url:{ action: @action } do |f| %>
     <h3>Sign up here!</h3>
@@ -17,6 +17,9 @@
     <%= f.hidden_field :owner_id, value: 9 %>
     <%= f.submit "Submit", :class => 'btn btn-default' %>
   <% end %>
+  <p>
+    
+  </p>
 </fieldset>
 </div>
 <div class="col-sm-4"></div>
