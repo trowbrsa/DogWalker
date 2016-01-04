@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 seed_owners = [
-{name: "Pope Francis", email: "123@456.com", bio: "I am a very busy man and won't have time to walk dogs. If you're feeling holy, please get in touch."},
-{name: "Ruth Bader Ginsburg", bio: "Where I work, I sadly cannot bring dogs in. I would love for you walk my dog while I am away."},
-{name: "Bernie Man", bio: "The rich have taken over the dog care industry, and we must take it back by means of supporting our middle-class dogs. Our dogs don't need fancy daycare centers, they need walks! I vow to support you if you can support my dog with a walk."},
-{name: "Billy Bob", bio: "Damn dog ate my car."}
+{first_name: "Pope", last_name: "Francis", email: "123@456.com", bio: "I am a very busy man and won't have time to walk dogs. If you're feeling holy, please get in touch."},
+{first_name: "Ruth", last_name: "Bader Ginsburg", bio: "Where I work, I sadly cannot bring dogs in. I would love for you walk my dog while I am away."},
+{first_name: "Bernie", last_name: "Man", bio: "The rich have taken over the dog care industry, and we must take it back by means of supporting our middle-class dogs. Our dogs don't need fancy daycare centers, they need walks! I vow to support you if you can support my dog with a walk."},
+{first_name: "Billy", last_name: "Bob", bio: "Damn dog ate my car."}
 ]
 
 seed_owners.each do |seed|
