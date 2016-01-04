@@ -1,6 +1,8 @@
 <div class="col-sm-4"></div>
 <div class="col-sm-4">
 <%= form_for(:session, url: login_path) do |f| %>
+<h3>Log in</h3>
+<br>
 <div class="form-group">
   <%= f.email_field :email, :placeholder => "Email", class:"form-control" %>
   <br>
