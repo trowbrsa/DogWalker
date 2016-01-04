@@ -1,6 +1,7 @@
 class WalkersController < ApplicationController
 
   def new
+    @bg = "bg-12"
     @walker = Walker.new
     @action = :create
   end
@@ -11,6 +12,7 @@ class WalkersController < ApplicationController
   end
 
   def show
+    @bg = "bg-13"
     @walker = Walker.find(params[:id])
   end
 

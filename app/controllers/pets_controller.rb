@@ -1,6 +1,7 @@
 class PetsController < ApplicationController
 
   def new
+    @bg = "bg-6"
     @pet = Pet.new
     @action = :create
   end
@@ -12,6 +13,7 @@ class PetsController < ApplicationController
 
 
   def edit
+    @bg = "bg-7"
     id = params[:id]
     @pet = Pet.find(id)
     @action = :update

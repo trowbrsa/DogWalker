@@ -1,15 +1,17 @@
 class UsersController < ApplicationController
 
   def new
+    @bg = "bg-9"
     @user = User.new
     @action = :create
   end
 
   def index
-
+    @bg = "bg-10"
   end
 
   def show
+    @bg = "bg-11"
     id = params[:id]
     @user = User.find(id)
   end

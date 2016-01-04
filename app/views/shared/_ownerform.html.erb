@@ -1,15 +1,25 @@
+<div class="col-md-4"></div>
+<div class="col-md-4">
 <fieldset>
   <%= form_for @owner do |f| %>
-    <legend><h1>Profile page</h1></legend>
+    <h1>Profile page</h1>
+    <div class="form-group">
     <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
+    <%= f.text_field :first_name, class:"form-control" %>
+    </div>
     <br>
+    <div class="form-group">
     <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
+    <%= f.text_field :last_name, class:"form-control" %>
+    </div>
     <br>
+    <div class="form-group">
     <%= f.label :bio %>
-    <%= f.text_field :bio %>
+    <%= f.text_field :bio, class:"form-control" %>
+    </div>
     <%= f.hidden_field :user_id, value: params[:user_id] %>
     <br>
-    <%= f.submit "Submit", :class => 'submit_button' %>
+    <%= f.submit "Submit", :class => 'submit_button btn btn-default' %>
   <% end %>
+</div>
+<div class="col-md-4"></div>

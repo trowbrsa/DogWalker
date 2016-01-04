@@ -1,0 +1,144 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ */
+
+ // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import url('https://fonts.googleapis.com/css?family=Lato|News+Gothic|Inconsolata|Droid+Sans|Roboto|Cabin|Open+Sans');
+
+/*Colors the Nav non-white and makes it transparent*/
+nav {
+  background-color: rgba(64,64,64, .6);
+  max-width: 1280px;
+  text-align: right;
+  line-height: 59px;
+}
+
+.nav_font {
+  color: white;
+  font-family: cabin;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.nav_font:hover {
+  color: white;
+}
+
+/*Fixes the logo and allows the R to be seen*/
+.logo {
+  position: fixed;
+  width: 55px;
+  height: 62px;
+  background-color: rgb(177,102,69);
+}
+
+/*Allows the logo to appear and undos bootstrap*/
+.logo h6 {
+  top: 0;
+  margin: 0px;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 53px;
+}
+
+.jumbotron-custom {
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-1 {
+  background: url('dog1.jpg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-2 {
+  background: url('dog2.jpg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-3 {
+  background: url('dog3.jpg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-4 {
+  background: url('dog4.jpeg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-5 {
+  background: url('dog5.jpeg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-6 {
+  background: url('dog6.jpeg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-7 {
+  background: url('dog7.jpeg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-8 {
+  background: url('dog8.jpeg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-9 {
+  background: url('dog9.jpeg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-10 {
+  background: url('dog3.jpeg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-11 {
+  background: url('dog11.jpeg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-12 {
+  background: url('dog12.jpg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+.bg-13 {
+  background: url('dog13.jpg') no-repeat;
+  background-size: cover;
+  height: 800px;
+}
+
+
+.title-fade {
+  background-color: rgba(192,192,192,0.6);
+}

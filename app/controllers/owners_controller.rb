@@ -2,16 +2,18 @@ class OwnersController < ApplicationController
 
 
   def home
-
+    @bg = "bg-1"
   end
 
   def index
+    @bg = "bg-2"
     @user = User.find(session[:user_id]) if session[:user_id]
     @owner = Owner.find(params[:owner_id])
     @pets = @owner.pets
   end
 
   def new
+    @bg = "bg-3"
     @owner = Owner.new
     @action = :create
   end
@@ -23,12 +25,14 @@ class OwnersController < ApplicationController
 
 
   def edit
+    @bg = "bg-4"
     id = params[:id]
     @owner = Owner.find(id)
     @action = :update
   end
 
   def show
+    @bg = "bg-5"
     @owner = Owner.find(params[:id])
     @pets = @owner.pets
   end
