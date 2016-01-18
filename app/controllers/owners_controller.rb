@@ -33,8 +33,9 @@ class OwnersController < ApplicationController
 
   def show
     @bg = "bg-5"
-    @owner = Owner.find(params[:id])
-    @pets = @owner.pets
+    @user = User.find(params[:user_id])
+    @owner = @user.owners[0]
+    @pets = @owner.pets[0]
   end
 
   def update
@@ -50,7 +51,7 @@ class OwnersController < ApplicationController
   private
 
   def owner_params
-    params.permit(owner:[:id, :first_name, :last_name, :user_id, :bio, :owner_id])
+    params.permit(owner:[:id, :first_name, :last_name, :user_id, :bio])
   end
 
 end

@@ -52,6 +52,9 @@ group :development do
   gem 'rails-erd'
   # Use sqlite3 as the database for Active Record in development
   gem 'sqlite3'
+  # for photo storage
+  gem 'aws-sdk', '>= 2.0.0' # If using paperclip `master` (upcoming v5.0)
+
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
