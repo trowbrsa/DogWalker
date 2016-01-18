@@ -18,8 +18,10 @@
   <% @pets.each do |pet| %>
     <h3><%= pet.name %></h3>
     <br>
-    <% if !pet.image.nil? %>
+    <% if !pet.image_file_name.nil? %>
       <%= image_tag pet.image.url(:medium) %>
+    <% else %>
+      <%= image_tag("default-dog", alt: "Default image for dog") %>
     <% end %>
     <br>
     <h4><%= pet.bio %></h4>
