@@ -32,10 +32,9 @@ class OwnersController < ApplicationController
   end
 
   def show
-    @bg = "bg-5"
     @user = User.find(params[:user_id])
     @owner = @user.owners[0]
-    @pets = @owner.pets[0]
+    @pets = @owner.pets
   end
 
   def update

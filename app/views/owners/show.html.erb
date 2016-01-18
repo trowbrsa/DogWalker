@@ -1,43 +1,32 @@
 <div class="row">
 
-<div class="title-fade col-xs-6">
-
-<h3>Welcome, <%= @owner.first_name %>!</h3>
-<p>In a future version of this, there will be a carousel will display the <br>
-  last 5 five dog walkers that have created an account with a picture. It <br>
-  will also have a link to the user's profile, where the user can edit their<br>
-  information. FANCY!</p>
-
-<br>
-<%= link_to "Add a Pet", new_user_owner_pet_path(params[:user_id], @owner.id), class:"btn btn-default" %>
-<br>
-
+  <div class="title-fade col-xs-6">
+    <h3>Welcome, <%= @owner.first_name %>!</h3>
+    <p>In a future version of this, there will be a carousel will display the
+      last 5 five dog walkers that have created an account with a picture. It
+      will also have a link to the user's profile, where the user can edit their
+      information. FANCY!</p>
+    <br>
+    <%= link_to "Add a Pet", new_user_owner_pet_path(params[:user_id], @owner.id), class:"btn btn-default" %>
+    <br>
+    <br>
+  </div>
 </div>
 
-</div>
 <div class="row">
-
-
-<br>
-<br>
 <% if !@pets.nil? %>
   <% @pets.each do |pet| %>
-    <%= pet.name %>
+    <h3><%= pet.name %></h3>
     <br>
     <% if !pet.image.nil? %>
       <%= image_tag pet.image.url(:medium) %>
-      <br>
-      <%= pet.bio %>
-      <br>
-      <br>
-      <%= link_to "Edit", edit_user_owner_pet_path(params[:user_id], @owner.id, pet.id), class:"btn btn-default" %>
-      <%= link_to "Remove", user_owner_pet_path(params[:user_id], @owner.id, pet.id), method: :delete, class:"btn btn-default" %>
-      <br>
-      <br>
-      <br>
     <% end %>
+    <br>
+    <h4><%= pet.bio %></h4>
+    <%= link_to "Edit", edit_user_owner_pet_path(params[:user_id], @owner.id, pet.id), class:"btn btn-default" %>
+    <%= link_to "Remove", user_owner_pet_path(params[:user_id], @owner.id, pet.id), method: :delete, class:"btn btn-default" %>
+    <br>
+    <br>
   <% end %>
 <% end %>
-
-
 </div>
